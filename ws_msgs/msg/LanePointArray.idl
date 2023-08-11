@@ -1,0 +1,13 @@
+#include "std_msgs/msg/Header.idl"
+#include "geometry_msgs/msg/Point32.idl"
+
+module ws_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      " Message for a full set of Lane Pints")
+    struct LanePointArray {
+      std_msgs::msg::Header header;       
+      sequence<geometry_msgs::msg::Point32> pts;
+    };
+  };   
+};

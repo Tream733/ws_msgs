@@ -1,0 +1,37 @@
+#include "geometry_msgs/msg/Point32.idl"
+#include "ws_msgs/msg/ObjectClassification.idl"
+#include "ws_msgs/msg/Box.idl"
+
+
+module ws_msgs {
+  module msg {
+    typedef geometry_msgs::msg::Point32 geometry_msgs__msg__Point32;
+    typedef geometry_msgs__msg__Point32 geometry_msgs__msg__Point32__8[8];
+
+    struct Bbox {
+      geometry_msgs__msg__Point32__8 corner_3d;
+      geometry_msgs__msg__Point32__8 corner_image;
+      // geometry_msgs::msg::Point32 p_top_left_far ;
+      // geometry_msgs::msg::Point32 p_top_right_far;
+      // geometry_msgs::msg::Point32 p_top_right_near;
+      // geometry_msgs::msg::Point32 p_top_left_near;
+      // geometry_msgs::msg::Point32 p_bot_left_far;
+      // geometry_msgs::msg::Point32 p_bot_right_far;
+      // geometry_msgs::msg::Point32 p_bot_right_near;
+      // geometry_msgs::msg::Point32 p_bot_left_near;
+      geometry_msgs::msg::Point32 center;
+      geometry_msgs::msg::Point32 size;
+      uint8 type;
+      int32 id;
+      int32 behavior_state;
+      boolean velocity_reliable;
+      boolean pose_reliable;
+      float velocity_linear_x;
+      float acceleration_linear_y;    
+      float heading;
+      float existence_probability;
+      sequence<ws_msgs::msg::ObjectClassification> classification;
+      ws_msgs::msg::Box box_2d;
+    };
+  };
+};

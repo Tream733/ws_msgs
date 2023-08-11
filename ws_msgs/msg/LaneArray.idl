@@ -1,0 +1,11 @@
+#include "ws_msgs/msg/Bbox.idl"
+#include "std_msgs/msg/Header.idl"
+
+module ws_msgs {
+  module msg {
+    struct LaneArray {
+      std_msgs::msg::Header header;       
+      sequence<ws_msgs::msg::LanePointArray> lanes;
+    };
+  };   
+};

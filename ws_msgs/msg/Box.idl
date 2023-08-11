@@ -1,0 +1,12 @@
+#include "geometry_msgs/msg/Point32.idl"
+
+module ws_msgs {
+  module msg {
+    typedef geometry_msgs::msg::Point32 geometry_msgs__msg__Point32;
+    struct Box {
+      geometry_msgs::msg::Point32 center;
+      geometry_msgs::msg::Point32 size;
+      uint8 type;   
+    };
+  };
+};

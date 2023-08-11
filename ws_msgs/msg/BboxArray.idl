@@ -1,0 +1,17 @@
+#include "ws_msgs/msg/Bbox.idl"
+#include "std_msgs/msg/Header.idl"
+
+module ws_msgs {
+  module msg {
+    module BboxArray_Constants {
+      const uint32 CAPACITY = 256;
+    };
+    @verbatim (language="comment", text=
+      " Message for a full set of bounding boxes")
+    struct BboxArray {
+      std_msgs::msg::Header header; 
+      uint8 source_type;      // source type  1 camera; 2 lidar ; 3 fusion  
+      sequence<ws_msgs::msg::Bbox, 256> boxes;
+    };
+  };   
+};
